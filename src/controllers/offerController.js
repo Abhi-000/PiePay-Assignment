@@ -1,21 +1,16 @@
-// src/routes/offers.js
-const express = require('express');
+// src/controllers/offerController.js
 const pool = require('../config/database');
 const OfferParser = require('../services/offerParser');
-
-const router = express.Router();
 const { calculateDiscount } = require('../utils/discountCalculator');
 
-router.post('/offer', async (req, res) => {
+const createOffers = async (req, res) => {
   try {
-    // const { flipkartOfferApiResponse } = req.body;
-    
-    // if (!flipkartOfferApiResponse) {
-    //   return res.status(400).json({ error: 'flipkartOfferApiResponse is required' });
-    // }
+    if (!req.body.flipkartOfferApiResponse) {
+      return res.status(400).json({ error: 'flipkartOfferApiResponse is required' });
+    }
     
     // Parse offers from Flipkart response
-    const parsedOffers = OfferParser.parseFlipkartResponse(req.body);
+    const parsedOffers = OfferParser.parseFlipkartResponse(req.body.flipkartOfferApiResponse);
     
     let newOffersCreated = 0;
     
@@ -65,11 +60,12 @@ router.post('/offer', async (req, res) => {
     });
     
   } catch (error) {
-    console.error('Error in /offer endpoint:', error);
+    console.error('Error in createOffers controller:', error);
     res.status(500).json({ error: error.message });
   }
-});
-router.get('/highest-discount', async (req, res) => {
+};
+
+const getHighestDiscount = async (req, res) => {
   try {
     const { amountToPay, bankName, paymentInstrument } = req.query;
     
@@ -143,9 +139,12 @@ router.get('/highest-discount', async (req, res) => {
     });
     
   } catch (error) {
-    console.error('Error in /highest-discount endpoint:', error);
+    console.error('Error in getHighestDiscount controller:', error);
     res.status(500).json({ error: error.message });
   }
-});
+};
 
-module.exports = router;
+module.exports = {
+  createOffers,
+  getHighestDiscount
+};

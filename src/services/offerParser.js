@@ -21,7 +21,7 @@ class OfferParser {
         }
       }
       
-      // Extract offers from offer_sections (like PBO section)
+      // Extract offers from offer_sections
       // This will merge/override with any existing offers from banners
       if (flipkartResponse.offer_sections) {
         for (const sectionKey in flipkartResponse.offer_sections) {
@@ -128,73 +128,66 @@ class OfferParser {
    * @returns {Object} Discount information object
    */
   static extractDiscountFromSummary(summary) {
-    const result = {
-      type: 'FLAT',
-      value: 0,
-      minAmount: null,
-      maxDiscount: null
-    };
-    
-    if (!summary) return result;
-    
-    try {
-      // Extract percentage discount (e.g., "5% cashback")
-      const percentageMatch = summary.match(/(\d+)%/);
-      if (percentageMatch) {
-        result.type = 'PERCENTAGE';
-        result.value = parseInt(percentageMatch[1]);
-      }
-      
-      // Extract flat discount amount (e.g., "Flat ₹10", "₹500", "upto ₹4,000")
-      const flatAmountMatch = summary.match(/₹\s*(\d+(?:,\d+)*)/g);
-      if (flatAmountMatch) {
-        // Convert comma-separated numbers to integers
-        const amounts = flatAmountMatch.map(amount => {
-          return parseInt(amount.replace(/[₹\s,]/g, ''));
-        });
-        
-        // If percentage discount, the first amount might be max discount
-        if (result.type === 'PERCENTAGE' && amounts.length > 0) {
-          result.maxDiscount = amounts[0];
-        }
-        // If flat discount, take the first amount as discount value
-        else if (result.type === 'FLAT' && amounts.length > 0) {
-          result.value = amounts[0];
-        }
-      }
-      
-      // Extract minimum amount (e.g., "Min Order Value ₹500", "above ₹2999")
-      const minAmountMatch = summary.match(/(?:Min Order Value|above|minimum)\s*₹\s*(\d+(?:,\d+)*)/i);
-      if (minAmountMatch) {
-        result.minAmount = parseInt(minAmountMatch[1].replace(/,/g, ''));
-      }
-      
-      // Extract maximum discount for percentage offers
-      const maxDiscountMatch = summary.match(/(?:upto|up to)\s*₹\s*(\d+(?:,\d+)*)/i);
-      if (maxDiscountMatch) {
-        result.maxDiscount = parseInt(maxDiscountMatch[1].replace(/,/g, ''));
-      }
-      
-    } catch (error) {
-      console.error('Error extracting discount from summary:', error);
+  const result = {
+    type: 'FLAT',
+    value: 0,
+    minAmount: null,
+    maxDiscount: null
+  };
+  
+  if (!summary) return result;
+  
+  try {
+    // Extract percentage discount
+    const percentageMatch = summary.match(/(\d+)%/);
+    if (percentageMatch) {
+      result.type = 'PERCENTAGE';
+      result.value = parseInt(percentageMatch[1]);
     }
     
-    return result;
+    // Extract flat discount amount
+    const flatAmountMatch = summary.match(/₹\s*(\d+(?:,\d+)*)/g);
+    if (flatAmountMatch) {
+      // Convert comma-separated numbers to integers
+      const amounts = flatAmountMatch.map(amount => {
+        return parseInt(amount.replace(/[₹\s,]/g, ''));
+      });
+      
+      // If percentage discount, the first amount might be max discount
+      if (result.type === 'PERCENTAGE' && amounts.length > 0) {
+        result.maxDiscount = amounts[0];
+      }
+      // If flat discount, take the first amount as discount value
+      else if (result.type === 'FLAT' && amounts.length > 0) {
+        result.value = amounts[0];
+      }
+    }
+    
+    // Fixed: Extract minimum amount with more specific regex
+    // Look for specific patterns that indicate minimum transaction value
+    const minAmountMatch = summary.match(/(?:Min Order Value|Min Txn Value|minimum order|cart value above)\s*:?\s*₹\s*(\d+(?:,\d+)*)/i);
+    if (minAmountMatch) {
+      result.minAmount = parseInt(minAmountMatch[1].replace(/,/g, ''));
+    }
+    
+    // Extract maximum discount for percentage offers
+    const maxDiscountMatch = summary.match(/(?:upto|up to)\s*₹\s*(\d+(?:,\d+)*)/i);
+    if (maxDiscountMatch) {
+      result.maxDiscount = parseInt(maxDiscountMatch[1].replace(/,/g, ''));
+    }
+    
+    // Check for EMI benefits
+    if (summary.toLowerCase().includes('no cost emi')) {
+      result.type = 'EMI_BENEFIT';
+      result.value = 0; // No direct discount value for EMI benefits
+    }
+
+  } catch (error) {
+    console.error('Error extracting discount from summary:', error);
   }
   
-  /**
-   * Validate parsed offer data
-   * @param {Object} offer - Parsed offer object
-   * @returns {boolean} True if offer is valid
-   */
-  static validateOffer(offer) {
-    return offer && 
-           offer.bankName && 
-           offer.title && 
-           offer.discountType && 
-           typeof offer.discountValue === 'number' &&
-           offer.discountValue > 0;
-  }
+  return result;
+}
 }
 
 module.exports = OfferParser;

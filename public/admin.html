@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Admin - SQL Query Interface</title>
+    <title>PiePay Admin - Complete Interface</title>
     <style>
         * {
             margin: 0;
@@ -45,8 +45,156 @@
             font-size: 1.1em;
         }
 
-        .query-section {
+        .nav-tabs {
+            display: flex;
             margin-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .nav-tab {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab:hover {
+            color: #667eea;
+        }
+
+        .nav-tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            font-weight: 600;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .api-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+
+        .api-section h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .method-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .method-post {
+            background: #48bb78;
+        }
+
+        .method-get {
+            background: #4299e1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            resize: vertical;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: #48bb78;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+        }
+
+        .btn-danger {
+            background: #e53e3e;
+        }
+
+        .btn-danger:hover {
+            background: #c53030;
+        }
+
+        .response-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .response-success {
+            border-color: #48bb78;
+            background: #f0fff4;
+        }
+
+        .response-error {
+            border-color: #e53e3e;
+            background: #fff5f5;
         }
 
         .quick-queries {
@@ -66,31 +214,6 @@
             margin-bottom: 20px;
         }
 
-        .btn {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #5a67d8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-danger {
-            background: #e53e3e;
-        }
-
-        .btn-danger:hover {
-            background: #c53030;
-        }
-
         .query-input {
             width: 100%;
             min-height: 120px;
@@ -107,18 +230,6 @@
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .execute-btn {
-            background: #48bb78;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 12px 24px;
-            margin-top: 15px;
-        }
-
-        .execute-btn:hover {
-            background: #38a169;
         }
 
         .results-section {
@@ -218,16 +329,132 @@
             font-size: 1.2em;
             margin-bottom: 10px;
         }
+
+        .input-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        pre {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🗄️ Database Query Interface</h1>
-            <p>Execute SQL queries on your Railway PostgreSQL database</p>
+            <h1>🥧 PiePay Admin Interface</h1>
+            <p>Complete API testing and database management</p>
         </div>
 
-        <div class="query-section">
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="switchTab('apis')">API Testing</button>
+            <button class="nav-tab" onclick="switchTab('database')">Database Query</button>
+        </div>
+
+        <!-- API Testing Tab -->
+        <div id="apis" class="tab-content active">
+            <!-- POST /offer API -->
+            <div class="api-section">
+                <h3>
+                    <span class="method-badge method-post">POST</span>
+                    /offer - Store Flipkart Offers
+                </h3>
+                
+                <div class="form-group">
+                    <label for="offerPayload">Flipkart API Response (JSON)</label>
+                    <textarea 
+                        id="offerPayload" 
+                        class="form-control" 
+                        placeholder="Paste the complete Flipkart offer API response JSON here...&#10;&#10;Example:&#10;{&#10;  &quot;flipkartOfferApiResponse&quot;: {&#10;    // Your Flipkart API response data&#10;  }&#10;}"
+                    ></textarea>
+                </div>
+                
+                <button onclick="testOfferAPI()" class="btn btn-success">Submit Offers</button>
+                
+                <div id="offerResponse" class="response-container" style="display: none;">
+                    <h4>Response:</h4>
+                    <pre id="offerResponseText"></pre>
+                </div>
+            </div>
+
+            <!-- GET /highest-discount API -->
+            <div class="api-section">
+                <h3>
+                    <span class="method-badge method-get">GET</span>
+                    /highest-discount - Find Best Discount
+                </h3>
+                
+                <div class="input-row">
+    <div class="form-group">
+        <label for="amountToPay">Amount to Pay (₹)</label>
+        <input type="number" id="amountToPay" class="form-control" placeholder="10000" min="1">
+    </div>
+    
+    <div class="form-group">
+        <label for="bankName">Bank Name</label>
+        <input type="text" id="bankName" class="form-control" placeholder="e.g., AXIS, HDFC, ICICI" list="bankOptions" required>
+        <datalist id="bankOptions">
+            <option value="AXIS">
+            <option value="HDFC">
+            <option value="ICICI">
+            <option value="SBI">
+            <option value="KOTAK">
+            <option value="IDFC">
+            <option value="BOB">
+            <option value="CANARA">
+            <option value="FLIPKARTAXISBANK">
+            <option value="BAJAJFINSERV">
+        </datalist>
+    </div>
+    
+    <div class="form-group">
+        <label for="paymentInstrument">Payment Instrument</label>
+        <input type="text" id="paymentInstrument" class="form-control" placeholder="e.g., CREDIT, UPI_COLLECT" list="instrumentOptions">
+        <datalist id="instrumentOptions">
+            <option value="CREDIT">
+            <option value="UPI_COLLECT">
+            <option value="UPI_INTENT">
+            <option value="EMI_OPTIONS">
+        </datalist>
+    </div>
+</div>
+                <button onclick="testDiscountAPI()" class="btn btn-success">Calculate Discount</button>
+                
+                <div id="discountResponse" class="response-container" style="display: none;">
+                    <h4>Response:</h4>
+                    <pre id="discountResponseText"></pre>
+                </div>
+            </div>
+
+            <!-- Sample Data Helper -->
+            <div class="api-section">
+                <h3>🔧 Sample Data</h3>
+                <p style="margin-bottom: 15px; color: #666;">Use these sample buttons to quickly test the APIs:</p>
+                
+                <div class="btn-group">
+                    <button onclick="loadSampleOffer()" class="btn">Load Sample Offer Data</button>
+                    <button onclick="loadSampleDiscount()" class="btn">Load Sample Discount Data</button>
+                    <button onclick="clearAPIs()" class="btn btn-danger">Clear All Fields</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Query Tab -->
+        <div id="database" class="tab-content">
             <div class="quick-queries">
                 <h3>Quick Queries</h3>
                 <div class="btn-group" id="quickButtons">
@@ -238,46 +465,196 @@
             <textarea 
                 id="queryInput" 
                 class="query-input" 
-                placeholder="Enter your SQL query here...&#10;&#10;Examples:&#10;SELECT * FROM users LIMIT 10;&#10;SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';"
+                placeholder="Enter your SQL query here...&#10;&#10;Examples:&#10;SELECT * FROM offers LIMIT 10;&#10;SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';"
             ></textarea>
             
             <div style="display: flex; gap: 10px; margin-top: 15px;">
-                <button onclick="executeQuery()" class="btn execute-btn">Execute Query</button>
+                <button onclick="executeQuery()" class="btn btn-success">Execute Query</button>
                 <button onclick="clearQuery()" class="btn btn-danger">Clear</button>
             </div>
-        </div>
 
-        <div class="results-section" id="resultsSection" style="display: none;">
-            <div class="results-header">
-                <h3>Results</h3>
-                <span class="row-count" id="rowCount"></span>
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h3>Results</h3>
+                    <span class="row-count" id="rowCount"></span>
+                </div>
+                <div id="resultsContainer"></div>
             </div>
-            <div id="resultsContainer"></div>
         </div>
     </div>
 
     <script>
         let tables = [];
 
-        // Load table list on page load
+        // Initialize page
         window.onload = async function() {
             try {
                 const response = await fetch('/admin/tables');
-                const data = await response.json();
-                if (data.success) {
-                    tables = data.tables;
-                    createQuickButtons();
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success) {
+                        tables = data.tables;
+                        createQuickButtons();
+                    }
                 }
             } catch (error) {
                 console.error('Error loading tables:', error);
             }
         };
 
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked nav tab
+            event.target.classList.add('active');
+        }
+
+        // API Testing Functions
+        async function testOfferAPI() {
+            const payload = document.getElementById('offerPayload').value.trim();
+            const responseDiv = document.getElementById('offerResponse');
+            const responseText = document.getElementById('offerResponseText');
+            
+            if (!payload) {
+                alert('Please enter the Flipkart API response JSON');
+                return;
+            }
+            
+            try {
+                // Validate JSON
+                JSON.parse(payload);
+                
+                responseDiv.style.display = 'block';
+                responseDiv.className = 'response-container';
+                responseText.textContent = 'Sending request...';
+                
+                const response = await fetch('/api/offer', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: payload
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    responseDiv.className = 'response-container response-success';
+                    responseText.textContent = JSON.stringify(data, null, 2);
+                } else {
+                    responseDiv.className = 'response-container response-error';
+                    responseText.textContent = JSON.stringify(data, null, 2);
+                }
+                
+            } catch (error) {
+                responseDiv.style.display = 'block';
+                responseDiv.className = 'response-container response-error';
+                
+                if (error instanceof SyntaxError) {
+                    responseText.textContent = 'Invalid JSON format. Please check your input.';
+                } else {
+                    responseText.textContent = `Error: ${error.message}`;
+                }
+            }
+        }
+
+        async function testDiscountAPI() {
+            const amountToPay = document.getElementById('amountToPay').value;
+            const bankName = document.getElementById('bankName').value;
+            const paymentInstrument = document.getElementById('paymentInstrument').value;
+            const responseDiv = document.getElementById('discountResponse');
+            const responseText = document.getElementById('discountResponseText');
+            
+            if (!amountToPay || !bankName) {
+                alert('Please fill in Amount to Pay and Bank Name');
+                return;
+            }
+            
+            try {
+                let url = `/api/highest-discount?amountToPay=${amountToPay}&bankName=${bankName}`;
+                if (paymentInstrument) {
+                    url += `&paymentInstrument=${paymentInstrument}`;
+                }
+                
+                responseDiv.style.display = 'block';
+                responseDiv.className = 'response-container';
+                responseText.textContent = 'Calculating discount...';
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    responseDiv.className = 'response-container response-success';
+                    responseText.textContent = JSON.stringify(data, null, 2);
+                } else {
+                    responseDiv.className = 'response-container response-error';
+                    responseText.textContent = JSON.stringify(data, null, 2);
+                }
+                
+            } catch (error) {
+                responseDiv.style.display = 'block';
+                responseDiv.className = 'response-container response-error';
+                responseText.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        // Sample data loaders
+        function loadSampleOffer() {
+            const sampleData = {
+                "flipkartOfferApiResponse": {
+                    "offers": [
+                        {
+                            "id": "AXIS_CREDIT_10",
+                            "bank": "AXIS",
+                            "paymentInstrument": "CREDIT",
+                            "discountType": "percentage",
+                            "discountValue": 10,
+                            "maxDiscount": 1000,
+                            "minAmount": 5000,
+                            "title": "10% off on AXIS Credit Card",
+                            "description": "Get 10% instant discount up to ₹1000"
+                        }
+                    ]
+                }
+            };
+            
+            document.getElementById('offerPayload').value = JSON.stringify(sampleData, null, 2);
+        }
+
+        function loadSampleDiscount() {
+            document.getElementById('amountToPay').value = '10000';
+            document.getElementById('bankName').value = 'AXIS';
+            document.getElementById('paymentInstrument').value = 'CREDIT';
+        }
+
+        function clearAPIs() {
+            document.getElementById('offerPayload').value = '';
+            document.getElementById('amountToPay').value = '';
+            document.getElementById('bankName').value = '';
+            document.getElementById('paymentInstrument').value = '';
+            document.getElementById('offerResponse').style.display = 'none';
+            document.getElementById('discountResponse').style.display = 'none';
+        }
+
+        // Database Query Functions (existing code)
         function createQuickButtons() {
             const container = document.getElementById('quickButtons');
             const buttons = [
                 { text: 'Show All Tables', query: `SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;` },
-                { text: 'Database Size', query: `SELECT pg_size_pretty(pg_database_size('railway')) as database_size;` }
+                { text: 'View All Offers', query: `SELECT * FROM offers ORDER BY created_at DESC LIMIT 20;` },
+                { text: 'Count Offers by Bank', query: `SELECT bank_name, COUNT(*) as offer_count FROM offers GROUP BY bank_name ORDER BY offer_count DESC;` },
             ];
 
             // Add table-specific buttons
@@ -318,7 +695,6 @@
             const resultsContainer = document.getElementById('resultsContainer');
             const rowCount = document.getElementById('rowCount');
             
-            // Show loading
             resultsSection.style.display = 'block';
             resultsContainer.innerHTML = '<div class="loading">Executing query</div>';
             
@@ -363,14 +739,12 @@
             
             let html = '<div class="table-container"><table>';
             
-            // Headers
             html += '<thead><tr>';
             headers.forEach(header => {
                 html += `<th>${escapeHtml(header)}</th>`;
             });
             html += '</tr></thead>';
             
-            // Rows
             html += '<tbody>';
             rows.forEach(row => {
                 html += '<tr>';
@@ -394,7 +768,7 @@
             return div.innerHTML;
         }
 
-        // Allow Ctrl+Enter to execute query
+        // Keyboard shortcuts
         document.getElementById('queryInput').addEventListener('keydown', function(e) {
             if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
                 executeQuery();
