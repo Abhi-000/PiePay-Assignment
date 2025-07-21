@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Admin - SQL Query Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .query-section {
+            margin-bottom: 30px;
+        }
+
+        .quick-queries {
+            margin-bottom: 20px;
+        }
+
+        .quick-queries h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-danger {
+            background: #e53e3e;
+        }
+
+        .btn-danger:hover {
+            background: #c53030;
+        }
+
+        .query-input {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        .query-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .execute-btn {
+            background: #48bb78;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 24px;
+            margin-top: 15px;
+        }
+
+        .execute-btn:hover {
+            background: #38a169;
+        }
+
+        .results-section {
+            margin-top: 30px;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .results-header h3 {
+            color: #333;
+            font-size: 1.3em;
+        }
+
+        .row-count {
+            color: #666;
+            font-size: 14px;
+            background: #f7fafc;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background: #f8fafc;
+            color: #2d3748;
+            font-weight: 600;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #e2e8f0;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tr:hover {
+            background-color: #edf2f7;
+        }
+
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #feb2b2;
+            margin-top: 15px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .loading::after {
+            content: "...";
+            animation: dots 1s steps(5, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: "."; }
+            40% { content: ".."; }
+            60% { content: "..."; }
+            80%, 100% { content: ""; }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #a0aec0;
+        }
+
+        .empty-state h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗄️ Database Query Interface</h1>
+            <p>Execute SQL queries on your Railway PostgreSQL database</p>
+        </div>
+
+        <div class="query-section">
+            <div class="quick-queries">
+                <h3>Quick Queries</h3>
+                <div class="btn-group" id="quickButtons">
+                    <!-- Quick buttons will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <textarea 
+                id="queryInput" 
+                class="query-input" 
+                placeholder="Enter your SQL query here...&#10;&#10;Examples:&#10;SELECT * FROM users LIMIT 10;&#10;SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';"
+            ></textarea>
+            
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <button onclick="executeQuery()" class="btn execute-btn">Execute Query</button>
+                <button onclick="clearQuery()" class="btn btn-danger">Clear</button>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <div class="results-header">
+                <h3>Results</h3>
+                <span class="row-count" id="rowCount"></span>
+            </div>
+            <div id="resultsContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        let tables = [];
+
+        // Load table list on page load
+        window.onload = async function() {
+            try {
+                const response = await fetch('/admin/tables');
+                const data = await response.json();
+                if (data.success) {
+                    tables = data.tables;
+                    createQuickButtons();
+                }
+            } catch (error) {
+                console.error('Error loading tables:', error);
+            }
+        };
+
+        function createQuickButtons() {
+            const container = document.getElementById('quickButtons');
+            const buttons = [
+                { text: 'Show All Tables', query: `SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;` },
+                { text: 'Database Size', query: `SELECT pg_size_pretty(pg_database_size('railway')) as database_size;` }
+            ];
+
+            // Add table-specific buttons
+            tables.forEach(table => {
+                buttons.push({
+                    text: `View ${table}`,
+                    query: `SELECT * FROM ${table} LIMIT 10;`
+                });
+                buttons.push({
+                    text: `${table} Schema`,
+                    query: `SELECT column_name, data_type, is_nullable FROM information_schema.columns WHERE table_name = '${table}' ORDER BY ordinal_position;`
+                });
+            });
+
+            container.innerHTML = buttons.map(btn => 
+                `<button class="btn" onclick="setQuery(\`${btn.query}\`)">${btn.text}</button>`
+            ).join('');
+        }
+
+        function setQuery(query) {
+            document.getElementById('queryInput').value = query;
+        }
+
+        function clearQuery() {
+            document.getElementById('queryInput').value = '';
+            document.getElementById('resultsSection').style.display = 'none';
+        }
+
+        async function executeQuery() {
+            const query = document.getElementById('queryInput').value.trim();
+            
+            if (!query) {
+                alert('Please enter a query');
+                return;
+            }
+
+            const resultsSection = document.getElementById('resultsSection');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const rowCount = document.getElementById('rowCount');
+            
+            // Show loading
+            resultsSection.style.display = 'block';
+            resultsContainer.innerHTML = '<div class="loading">Executing query</div>';
+            
+            try {
+                const response = await fetch('/admin/execute', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    if (data.rows && data.rows.length > 0) {
+                        rowCount.textContent = `${data.rowCount} row(s)`;
+                        resultsContainer.innerHTML = createTable(data.rows, data.fields);
+                    } else {
+                        rowCount.textContent = '0 rows';
+                        resultsContainer.innerHTML = `
+                            <div class="empty-state">
+                                <h4>No Results</h4>
+                                <p>Query executed successfully but returned no data.</p>
+                            </div>
+                        `;
+                    }
+                } else {
+                    rowCount.textContent = 'Error';
+                    resultsContainer.innerHTML = `<div class="error"><strong>Error:</strong> ${data.error}</div>`;
+                }
+            } catch (error) {
+                rowCount.textContent = 'Error';
+                resultsContainer.innerHTML = `<div class="error"><strong>Network Error:</strong> ${error.message}</div>`;
+            }
+        }
+
+        function createTable(rows, fields) {
+            if (!rows || rows.length === 0) return '<p>No data returned</p>';
+
+            const headers = Object.keys(rows[0]);
+            
+            let html = '<div class="table-container"><table>';
+            
+            // Headers
+            html += '<thead><tr>';
+            headers.forEach(header => {
+                html += `<th>${escapeHtml(header)}</th>`;
+            });
+            html += '</tr></thead>';
+            
+            // Rows
+            html += '<tbody>';
+            rows.forEach(row => {
+                html += '<tr>';
+                headers.forEach(header => {
+                    let value = row[header];
+                    if (value === null) value = '<em style="color: #999;">NULL</em>';
+                    else if (typeof value === 'object') value = JSON.stringify(value);
+                    else value = escapeHtml(String(value));
+                    html += `<td>${value}</td>`;
+                });
+                html += '</tr>';
+            });
+            html += '</tbody></table></div>';
+            
+            return html;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Allow Ctrl+Enter to execute query
+        document.getElementById('queryInput').addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                executeQuery();
+            }
+        });
+    </script>
+</body>
+</html>
