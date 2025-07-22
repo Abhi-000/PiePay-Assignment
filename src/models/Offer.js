@@ -100,30 +100,11 @@ CREATE TABLE IF NOT EXISTS offers (
 CREATE INDEX IF NOT EXISTS idx_adjustment_id ON offers USING btree (adjustment_id);
 CREATE INDEX IF NOT EXISTS idx_payment_instruments ON offers USING gin (payment_instruments);
 CREATE INDEX IF NOT EXISTS idx_bank_name ON offers USING btree (bank_name);
-
--- Additional performance indexes (optional)
-CREATE INDEX IF NOT EXISTS idx_discount_value ON offers (discount_value);
 CREATE INDEX IF NOT EXISTS idx_min_amount ON offers (min_amount);
-CREATE INDEX IF NOT EXISTS idx_created_at ON offers (created_at);
 `;
 
-// Database constraints and indexes (based on actual schema)
-const constraints = {
-  primaryKey: 'id',
-  unique: ['adjustment_id'],
-  notNull: ['id', 'bank_name', 'discount_value'],
-  indexes: {
-    'idx_adjustment_id': 'btree (adjustment_id)',
-    'idx_payment_instruments': 'gin (payment_instruments)',
-    'idx_bank_name': 'btree (bank_name)',
-    'idx_discount_value': 'btree (discount_value)',
-    'idx_min_amount': 'btree (min_amount)',
-    'idx_created_at': 'btree (created_at)'
-  }
-};
 module.exports = {
   OfferSchema,
-  createTableSQL,
-  constraints
+  createTableSQL
 };
 

@@ -1,9 +1,10 @@
 const Offer = require('./Offer');
+const pool = require('../config/database'); // import the shared pool
 
 // Database initialization script
-const initDatabase = async (client) => {
+const initDatabase = async () => {
   try {
-    await client.query(Offer.createTableSQL);
+    await pool.query(Offer.createTableSQL);
     console.log('✅ Database tables created successfully');
   } catch (error) {
     console.error('❌ Error creating database tables:', error);

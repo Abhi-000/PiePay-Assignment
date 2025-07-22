@@ -87,7 +87,7 @@ const getHighestDiscount = async (req, res) => {
     // Build query with payment instrument filter
 let query = `
   SELECT * FROM offers 
-  WHERE ($1 = ANY(banks) OR array_length(banks, 1) IS NULL)
+  WHERE ($1 = ANY(bank_name) OR array_length(bank_name, 1) IS NULL)
   AND (min_amount IS NULL OR min_amount <= $2)
 `;
     
