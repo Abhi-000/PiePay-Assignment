@@ -5,7 +5,7 @@ const { executeQuery, getTableInfo } = require('../controllers/adminController')
 const router = express.Router();
 
 // Serve the admin interface
-router.get('/query', (req, res) => {
+router.get('/', (req, res) => {
   res.sendFile('admin.html', { root: 'public' });
 });
 

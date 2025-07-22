@@ -2,6 +2,7 @@
 const pool = require('../config/database');
 const OfferParser = require('../services/offerParser');
 const { calculateDiscount } = require('../utils/discountCalculator');
+const {shouldApplyOffer } = require('../utils/offerValidation');
 
 const createOffers = async (req, res) => {
   try {
@@ -11,11 +12,13 @@ const createOffers = async (req, res) => {
     
     // Parse offers from Flipkart response
     const parsedOffers = OfferParser.parseFlipkartResponse(req.body.flipkartOfferApiResponse);
-    
+
+    const validOffers = parsedOffers.filter(offer => offer !== null);
+
     let newOffersCreated = 0;
     
     // Store each offer in database
-    for (const offer of parsedOffers) {
+    for (const offer of validOffers) {
       // Skip offers without adjustment_id
       if (!offer.adjustmentId) {
         console.warn('Skipping offer without adjustment_id:', offer.title);
@@ -25,10 +28,9 @@ const createOffers = async (req, res) => {
       const insertQuery = `
         INSERT INTO offers (
           adjustment_id, bank_name, title, discount_type, discount_value, 
-          min_amount, max_discount, payment_instruments, emi_months, 
-          card_networks, adjustment_type, adjustment_sub_type, offer_data
+          min_amount, max_discount, payment_instruments, emi_months, adjustment_type, adjustment_sub_type, offer_data
         )
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
         ON CONFLICT (adjustment_id) DO NOTHING
         RETURNING id
       `;
@@ -43,7 +45,6 @@ const createOffers = async (req, res) => {
         offer.maxDiscount,
         offer.paymentInstruments,
         offer.emiMonths,
-        offer.cardNetworks,
         offer.adjustmentType,
         offer.adjustmentSubType,
         JSON.stringify(offer.originalData)
@@ -84,11 +85,11 @@ const getHighestDiscount = async (req, res) => {
     }
     
     // Build query with payment instrument filter
-    let query = `
-      SELECT * FROM offers 
-      WHERE bank_name = $1 
-      AND (min_amount IS NULL OR min_amount <= $2)
-    `;
+let query = `
+  SELECT * FROM offers 
+  WHERE ($1 = ANY(banks) OR array_length(banks, 1) IS NULL)
+  AND (min_amount IS NULL OR min_amount <= $2)
+`;
     
     const queryParams = [bankName.toUpperCase(), amount];
     
@@ -119,7 +120,11 @@ const getHighestDiscount = async (req, res) => {
     let bestOffer = null;
     
     for (const offer of applicableOffers) {
-      const calculatedDiscount = calculateDiscount(offer, amount);
+  if (!shouldApplyOffer(offer, amount)) {
+    continue; // Skip this offer
+  }
+
+          const calculatedDiscount = calculateDiscount(offer, amount);
       
       if (calculatedDiscount > highestDiscount) {
         highestDiscount = calculatedDiscount;

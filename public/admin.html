@@ -260,12 +260,23 @@
             overflow-x: auto;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
+            max-width: 100%;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             font-size: 14px;
+            table-layout: fixed; /* Add this for fixed column widths */
+        }
+
+        th, td {
+            width: 200px; /* Set fixed width for all columns */
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: break-word;
         }
 
         th {
@@ -275,13 +286,21 @@
             padding: 12px;
             text-align: left;
             border-bottom: 2px solid #e2e8f0;
-            white-space: nowrap;
         }
 
         td {
             padding: 12px;
             border-bottom: 1px solid #f1f5f9;
             vertical-align: top;
+        }
+
+        /* Optional: Add hover effect to show full content */
+        td:hover {
+            white-space: normal;
+            word-wrap: break-word;
+            overflow: visible;
+            position: relative;
+            z-index: 1;
         }
 
         tr:nth-child(even) {
@@ -375,7 +394,7 @@
                 </h3>
                 
                 <div class="form-group">
-                    <label for="offerPayload">Flipkart API Response (JSON)</label>
+                    <label for="offerPayload">Flipkart API Response (JSON) (Please make sure to wrap the entire response JSON inside a root key named flipkartOfferApiResponse.)</label>
                     <textarea 
                         id="offerPayload" 
                         class="form-control" 
@@ -614,21 +633,58 @@
         function loadSampleOffer() {
             const sampleData = {
                 "flipkartOfferApiResponse": {
-                    "offers": [
-                        {
-                            "id": "AXIS_CREDIT_10",
-                            "bank": "AXIS",
-                            "paymentInstrument": "CREDIT",
-                            "discountType": "percentage",
-                            "discountValue": 10,
-                            "maxDiscount": 1000,
-                            "minAmount": 5000,
-                            "title": "10% off on AXIS Credit Card",
-                            "description": "Get 10% instant discount up to ₹1000"
+                   "offer_banners": 
+                   [{
+                        "adjustment_sub_type": "NBFC_ZERO_INTEREST",
+                        "adjustment_id": "FPO2507091534269T9NN",
+                        "summary": "BFL No Cost EMI Upto 12 Months",
+                        "contributors": {
+                            "payment_instrument": [
+                                "EMI_OPTIONS"
+                            ],
+                            "banks": [
+                                "BAJAJFINSERV"
+                            ],
+                            "emi_months": [
+                                "9",
+                                "12"
+                            ],
+                            "card_networks": []
+                        },
+                        "display_tags": [
+                            "PAYMENT_OPTIONS"
+                        ],
+                        "image": "https://static-assets-web.flixcart.com/apex-static/images/payments/banks/BFL_V2.svg",
+                        "type": {
+                            "value": "non-collapsable"
                         }
-                    ]
+                    },
+                    {
+                        "adjustment_sub_type": "EMI_FULL_INTEREST_WAIVER",
+                        "adjustment_id": "FPO250705190116Z9YX8",
+                        "summary": "No Cost EMI Upto 6 Months",
+                        "contributors": {
+                            "payment_instrument": [
+                                "EMI_OPTIONS"
+                            ],
+                            "banks": [
+                                "SBI"
+                            ],
+                            "emi_months": [
+                                "6"
+                            ],
+                            "card_networks": []
+                        },
+                        "display_tags": [
+                            "PAYMENT_OPTIONS"
+                        ],
+                        "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/sbi-7804ae3e.svg",
+                        "type": {
+                            "value": "non-collapsable"
+                        }
+                    }]
                 }
-            };
+            }
             
             document.getElementById('offerPayload').value = JSON.stringify(sampleData, null, 2);
         }
