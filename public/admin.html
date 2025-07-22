@@ -632,60 +632,196 @@
         // Sample data loaders
         function loadSampleOffer() {
             const sampleData = {
-                "flipkartOfferApiResponse": {
-                   "offer_banners": 
-                   [{
-                        "adjustment_sub_type": "NBFC_ZERO_INTEREST",
-                        "adjustment_id": "FPO2507091534269T9NN",
-                        "summary": "BFL No Cost EMI Upto 12 Months",
-                        "contributors": {
-                            "payment_instrument": [
-                                "EMI_OPTIONS"
-                            ],
-                            "banks": [
-                                "BAJAJFINSERV"
-                            ],
-                            "emi_months": [
-                                "9",
-                                "12"
-                            ],
-                            "card_networks": []
-                        },
-                        "display_tags": [
-                            "PAYMENT_OPTIONS"
-                        ],
-                        "image": "https://static-assets-web.flixcart.com/apex-static/images/payments/banks/BFL_V2.svg",
-                        "type": {
-                            "value": "non-collapsable"
-                        }
-                    },
-                    {
-                        "adjustment_sub_type": "EMI_FULL_INTEREST_WAIVER",
-                        "adjustment_id": "FPO250705190116Z9YX8",
-                        "summary": "No Cost EMI Upto 6 Months",
-                        "contributors": {
-                            "payment_instrument": [
-                                "EMI_OPTIONS"
-                            ],
-                            "banks": [
-                                "SBI"
-                            ],
-                            "emi_months": [
-                                "6"
-                            ],
-                            "card_networks": []
-                        },
-                        "display_tags": [
-                            "PAYMENT_OPTIONS"
-                        ],
-                        "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/sbi-7804ae3e.svg",
-                        "type": {
-                            "value": "non-collapsable"
-                        }
-                    }]
-                }
+"flipkartOfferApiResponse": {
+
+        "offer_banners": [
+        {
+            "adjustment_sub_type": "NBFC_ZERO_INTEREST",
+            "adjustment_id": "FPO2412231659536BR47",
+            "summary": "No Cost EMI on Bajaj Finserv EMI Card on cart value above ₹2999",
+            "contributors": {
+                "payment_instrument": [],
+                "banks": [
+                    "BAJAJFINSERV"
+                ],
+                "emi_months": [
+                    "3",
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://static-assets-web.flixcart.com/apex-static/images/payments/banks/BFL_V2.svg",
+            "type": {
+                "value": "non-collapsable"
             }
-            
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250626172916JI4VZ",
+            "summary": "Flat ₹10 Cashback on Paytm UPI Trxns. Min Order Value ₹500. Valid once per Paytm account",
+            "contributors": {
+                "payment_instrument": [
+                    "UPI_COLLECT",
+                    "UPI_INTENT"
+                ],
+                "banks": [],
+                "emi_months": [
+                    "0"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://rukminim1.flixcart.com/www/64/64/promos/02/06/2022/a89d0cb0-9155-4545-bd47-c5c53c8d50b7.png",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250619134128USHPF",
+            "summary": "5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter",
+            "contributors": {
+                "payment_instrument": [
+                    "CREDIT"
+                ],
+                "banks": [
+                    "FLIPKARTAXISBANK"
+                ],
+                "emi_months": [
+                    "0"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250619135528ZQIZW",
+            "summary": "5% cashback on Axis Bank Flipkart Debit Card up to ₹750",
+            "contributors": {
+                "payment_instrument": [
+                    "CREDIT"
+                ],
+                "banks": [
+                    "FLIPKARTAXISBANK"
+                ],
+                "emi_months": [
+                    "0"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        }
+    ],
+    "   offer_sections": {
+        "PBO": {
+            "title": "Partner offers",
+            "offers": [
+                {
+                    "adjustment_type": "CASHBACK_ON_CARD",
+                    "adjustment_id": "FPO250626172916JI4VZ",
+                    "summary": "Flat ₹10 Cashback on Paytm UPI Trxns. Min Order Value ₹500. Valid once per Paytm account",
+                    "contributors": {
+                        "payment_instrument": [
+                            "UPI_COLLECT",
+                            "UPI_INTENT"
+                        ],
+                        "banks": [],
+                        "emi_months": [
+                            "0"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://rukminim1.flixcart.com/www/64/64/promos/02/06/2022/a89d0cb0-9155-4545-bd47-c5c53c8d50b7.png"
+                },
+                {
+                    "adjustment_type": "CASHBACK_ON_CARD",
+                    "adjustment_id": "FPO250619134128USHPF",
+                    "summary": "5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter",
+                    "contributors": {
+                        "payment_instrument": [
+                            "CREDIT"
+                        ],
+                        "banks": [
+                            "FLIPKARTAXISBANK"
+                        ],
+                        "emi_months": [
+                            "0"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+                },
+                {
+                    "adjustment_type": "CASHBACK_ON_CARD",
+                    "adjustment_id": "FPO250619135528ZQIZW",
+                    "summary": "5% cashback on Axis Bank Flipkart Debit Card up to ₹750",
+                    "contributors": {
+                        "payment_instrument": [
+                            "CREDIT"
+                        ],
+                        "banks": [
+                            "FLIPKARTAXISBANK"
+                        ],
+                        "emi_months": [
+                            "0"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO2412231659536BR47",
+                    "summary": "No Cost EMI on Bajaj Finserv EMI Card on cart value above ₹2999",
+                    "contributors": {
+                        "payment_instrument": [],
+                        "banks": [
+                            "BAJAJFINSERV"
+                        ],
+                        "emi_months": [
+                            "3",
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://static-assets-web.flixcart.com/apex-static/images/payments/banks/BFL_V2.svg"
+                }
+            ]
+        }
+    }
+}
+            }
+
             document.getElementById('offerPayload').value = JSON.stringify(sampleData, null, 2);
         }
 
@@ -709,16 +845,12 @@
             const container = document.getElementById('quickButtons');
             const buttons = [
                 { text: 'Show All Tables', query: `SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;` },
-                { text: 'View All Offers', query: `SELECT * FROM offers ORDER BY created_at DESC LIMIT 20;` },
+                { text: 'View All Offers', query: `SELECT * FROM offers ORDER BY created_at DESC;` },
                 { text: 'Count Offers by Bank', query: `SELECT bank_name, COUNT(*) as offer_count FROM offers GROUP BY bank_name ORDER BY offer_count DESC;` },
             ];
 
             // Add table-specific buttons
             tables.forEach(table => {
-                buttons.push({
-                    text: `View ${table}`,
-                    query: `SELECT * FROM ${table} LIMIT 10;`
-                });
                 buttons.push({
                     text: `${table} Schema`,
                     query: `SELECT column_name, data_type, is_nullable FROM information_schema.columns WHERE table_name = '${table}' ORDER BY ordinal_position;`

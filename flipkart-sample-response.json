@@ -1,0 +1,1388 @@
+{
+"flipkartOfferApiResponse": {
+
+    "offer_banners": [
+        {
+            "adjustment_sub_type": "NBFC_ZERO_INTEREST",
+            "adjustment_id": "FPO2507091534269T9NN",
+            "summary": "BFL No Cost EMI Upto 12 Months",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "BAJAJFINSERV"
+                ],
+                "emi_months": [
+                    "9",
+                    "12"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://static-assets-web.flixcart.com/apex-static/images/payments/banks/BFL_V2.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "EMI_FULL_INTEREST_WAIVER",
+            "adjustment_id": "FPO250705190116Z9YX8",
+            "summary": "No Cost EMI Upto 6 Months",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "SBI"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/sbi-7804ae3e.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "EMI_FULL_INTEREST_WAIVER",
+            "adjustment_id": "FPO250705185902AISC5",
+            "summary": "No Cost EMI Upto 6 Months",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "ICICI"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/icici-2c9f480b.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "EMI_FULL_INTEREST_WAIVER",
+            "adjustment_id": "FPO250705190347GHR57",
+            "summary": "No Cost EMI Upto 6 Months",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "KOTAK"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/kotak-a0db9a54.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250701194857KFHIY",
+            "summary": "Extra ₹10000 Off On selected  Bank TRNX",
+            "contributors": {
+                "payment_instrument": [
+                    "CREDIT",
+                    "CREDIT",
+                    "EMI_OPTIONS",
+                    "NET_OPTIONS"
+                ],
+                "banks": [
+                    "ICICI"
+                ],
+                "emi_months": [
+                    "0",
+                    "3",
+                    "6",
+                    "9",
+                    "12",
+                    "18",
+                    "24"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/icici-2c9f480b.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250701194515LLXO5",
+            "summary": "Extra ₹10000 Off On selected  Bank TRNX",
+            "contributors": {
+                "payment_instrument": [
+                    "CREDIT",
+                    "CREDIT",
+                    "EMI_OPTIONS",
+                    "NET_OPTIONS"
+                ],
+                "banks": [
+                    "SBI"
+                ],
+                "emi_months": [
+                    "0",
+                    "3",
+                    "6",
+                    "9",
+                    "12",
+                    "18",
+                    "24"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/sbi-7804ae3e.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250701194127SO194",
+            "summary": "Extra ₹10000 Off On selected  Bank TRNX",
+            "contributors": {
+                "payment_instrument": [
+                    "CREDIT",
+                    "CREDIT",
+                    "EMI_OPTIONS",
+                    "NET_OPTIONS"
+                ],
+                "banks": [
+                    "KOTAK"
+                ],
+                "emi_months": [
+                    "0",
+                    "3",
+                    "6",
+                    "9",
+                    "12",
+                    "18",
+                    "24"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/kotak-a0db9a54.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250626172916JI4VZ",
+            "summary": "Flat ₹10 Cashback on Paytm UPI Trxns. Min Order Value ₹500. Valid once per Paytm account",
+            "contributors": {
+                "payment_instrument": [
+                    "UPI_COLLECT",
+                    "UPI_INTENT"
+                ],
+                "banks": [],
+                "emi_months": [
+                    "0"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://rukminim1.flixcart.com/www/64/64/promos/02/06/2022/a89d0cb0-9155-4545-bd47-c5c53c8d50b7.png",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250626182451RYQC7",
+            "summary": "5% off up to ₹750 on IDFC FIRST Power Women Platinum and Signature DebitCards. Min Txn Value: ₹5,000",
+            "contributors": {
+                "payment_instrument": [
+                    "CREDIT"
+                ],
+                "banks": [
+                    "IDFC"
+                ],
+                "emi_months": [
+                    "0"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://rukminim1.flixcart.com/www/128/128/promos/01/09/2023/c00c8f1e-1ae7-49d1-b7e5-0e2df3d11ef7.png?q=100",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250704202225I5HHC",
+            "summary": "Flat ₹2500 on HDFC Bank Credit Card EMI on 12 months and above tenure. Min Txn Value: ₹30000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "12",
+                    "18",
+                    "24",
+                    "36"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250704204038MD3DZ",
+            "summary": "Flat ₹3750 on HDFC Bank Credit Card EMI on 6 months tenure. Min Txn Value: ₹75000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO2507042045036N25F",
+            "summary": "Flat ₹4000 on HDFC Bank Credit Card EMI on 9 months tenure. Min Txn Value: ₹75000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "9"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO25070420170018FK3",
+            "summary": "Flat ₹2000 on HDFC Bank Credit Card EMI on 9 months tenure. Min Txn Value: ₹30000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "9"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250704203653BLDZA",
+            "summary": "Flat ₹4000 on HDFC Bank Credit Card EMI on 12 months and above tenure. Min Txn Value: ₹50000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "12",
+                    "18",
+                    "24",
+                    "36"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250619134128USHPF",
+            "summary": "5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter",
+            "contributors": {
+                "payment_instrument": [
+                    "CREDIT"
+                ],
+                "banks": [
+                    "FLIPKARTAXISBANK"
+                ],
+                "emi_months": [
+                    "0"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250630202506KYC5F",
+            "summary": "Extra ₹500 off on BOBCARD EMI Transactions on 9 months and above tenures. Min Product Value ₹25000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "BOBARODA"
+                ],
+                "emi_months": [
+                    "9",
+                    "12",
+                    "18",
+                    "24",
+                    "36"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://rukminim1.flixcart.com/www/96/96/promos/31/07/2024/fb560aa6-1104-492b-b747-f458dbae837b.png?q=100",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250704192447CLSFR",
+            "summary": "Flat ₹750 on HDFC Bank Credit Card EMI on 6 months tenure. Min Txn Value: ₹15000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO2507042105097DZ77",
+            "summary": "Flat ₹500 on HDFC Bank Credit Card EMI on 6 months tenure. Min. Txn Value: ₹10000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO2506301938399SY1F",
+            "summary": "10% off up to ₹1,500 on BOBCARD EMI Transactions of 6 months and above tenures, Min TxnValue: ₹7,500",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "BOBARODA"
+                ],
+                "emi_months": [
+                    "6",
+                    "9",
+                    "12",
+                    "18",
+                    "24",
+                    "36"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://rukminim1.flixcart.com/www/96/96/promos/31/07/2024/fb560aa6-1104-492b-b747-f458dbae837b.png?q=100",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250704194638XUV22",
+            "summary": "Flat ₹1000 on HDFC Bank Credit Card EMI on 9 months and above tenure. Min Txn Value: ₹15000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "9",
+                    "12",
+                    "18",
+                    "24",
+                    "36"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO2507042008157YQZM",
+            "summary": "Flat ₹1750 on HDFC Bank Credit Card EMI on 6 months Tenure. Min Txn Value: ₹30000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO25070420315436CH6",
+            "summary": "Flat ₹3500 on HDFC Bank Credit Card EMI on 9 months tenure. Min Txn Value: ₹50000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "9"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250704204930KZYV3",
+            "summary": "Flat ₹4500 on HDFC Bank Credit Card EMI on 12 months and above tenure. Min Txn Value: ₹75000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "12",
+                    "18",
+                    "24",
+                    "36"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250619135528ZQIZW",
+            "summary": "5% cashback on Axis Bank Flipkart Debit Card up to ₹750",
+            "contributors": {
+                "payment_instrument": [
+                    "CREDIT"
+                ],
+                "banks": [
+                    "FLIPKARTAXISBANK"
+                ],
+                "emi_months": [
+                    "0"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO2507042000473JP81",
+            "summary": "Flat ₹1500 on HDFC Bank Credit Card EMI on 9 months and above tenure. Min Txn Value: ₹20000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "9",
+                    "12",
+                    "18",
+                    "24",
+                    "36"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO2507042306179OKXZ",
+            "summary": "Flat ₹1250 on HDFC Bank Credit Card EMI on 6 months tenure. Min Txn Value: ₹20000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250704202703TYGA8",
+            "summary": "Flat ₹3250 on HDFC Bank Credit Card EMI on 6 months tenure. Min Txn Value: ₹50000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "6"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        },
+        {
+            "adjustment_sub_type": "PBO",
+            "adjustment_id": "FPO250704210925MIFUZ",
+            "summary": "Flat ₹750 on HDFC Bank Credit Card EMI on 9 months and above tenure. Min Txn Value: ₹10000",
+            "contributors": {
+                "payment_instrument": [
+                    "EMI_OPTIONS"
+                ],
+                "banks": [
+                    "HDFC"
+                ],
+                "emi_months": [
+                    "9",
+                    "12",
+                    "18",
+                    "24",
+                    "36"
+                ],
+                "card_networks": []
+            },
+            "display_tags": [
+                "PAYMENT_OPTIONS"
+            ],
+            "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg",
+            "type": {
+                "value": "non-collapsable"
+            }
+        }
+    ],
+    "offer_sections": {
+        "PBO": {
+            "title": "Partner offers",
+            "offers": [
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250701194857KFHIY",
+                    "summary": "Extra ₹10000 Off On selected  Bank TRNX",
+                    "contributors": {
+                        "payment_instrument": [
+                            "CREDIT",
+                            "CREDIT",
+                            "EMI_OPTIONS",
+                            "NET_OPTIONS"
+                        ],
+                        "banks": [
+                            "ICICI"
+                        ],
+                        "emi_months": [
+                            "0",
+                            "3",
+                            "6",
+                            "9",
+                            "12",
+                            "18",
+                            "24"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/icici-2c9f480b.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250701194515LLXO5",
+                    "summary": "Extra ₹10000 Off On selected  Bank TRNX",
+                    "contributors": {
+                        "payment_instrument": [
+                            "CREDIT",
+                            "CREDIT",
+                            "EMI_OPTIONS",
+                            "NET_OPTIONS"
+                        ],
+                        "banks": [
+                            "SBI"
+                        ],
+                        "emi_months": [
+                            "0",
+                            "3",
+                            "6",
+                            "9",
+                            "12",
+                            "18",
+                            "24"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/sbi-7804ae3e.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250701194127SO194",
+                    "summary": "Extra ₹10000 Off On selected  Bank TRNX",
+                    "contributors": {
+                        "payment_instrument": [
+                            "CREDIT",
+                            "CREDIT",
+                            "EMI_OPTIONS",
+                            "NET_OPTIONS"
+                        ],
+                        "banks": [
+                            "KOTAK"
+                        ],
+                        "emi_months": [
+                            "0",
+                            "3",
+                            "6",
+                            "9",
+                            "12",
+                            "18",
+                            "24"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/kotak-a0db9a54.svg"
+                },
+                {
+                    "adjustment_type": "CASHBACK_ON_CARD",
+                    "adjustment_id": "FPO250626172916JI4VZ",
+                    "summary": "Flat ₹10 Cashback on Paytm UPI Trxns. Min Order Value ₹500. Valid once per Paytm account",
+                    "contributors": {
+                        "payment_instrument": [
+                            "UPI_COLLECT",
+                            "UPI_INTENT"
+                        ],
+                        "banks": [],
+                        "emi_months": [
+                            "0"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://rukminim1.flixcart.com/www/64/64/promos/02/06/2022/a89d0cb0-9155-4545-bd47-c5c53c8d50b7.png"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250626182451RYQC7",
+                    "summary": "5% off up to ₹750 on IDFC FIRST Power Women Platinum and Signature DebitCards. Min Txn Value: ₹5,000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "CREDIT"
+                        ],
+                        "banks": [
+                            "IDFC"
+                        ],
+                        "emi_months": [
+                            "0"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://rukminim1.flixcart.com/www/128/128/promos/01/09/2023/c00c8f1e-1ae7-49d1-b7e5-0e2df3d11ef7.png?q=100"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250705190116Z9YX8",
+                    "summary": "No Cost EMI Upto 6 Months",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "SBI"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/sbi-7804ae3e.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250704202225I5HHC",
+                    "summary": "Flat ₹2500 on HDFC Bank Credit Card EMI on 12 months and above tenure. Min Txn Value: ₹30000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "12",
+                            "18",
+                            "24",
+                            "36"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250704204038MD3DZ",
+                    "summary": "Flat ₹3750 on HDFC Bank Credit Card EMI on 6 months tenure. Min Txn Value: ₹75000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO2507042045036N25F",
+                    "summary": "Flat ₹4000 on HDFC Bank Credit Card EMI on 9 months tenure. Min Txn Value: ₹75000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "9"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO25070420170018FK3",
+                    "summary": "Flat ₹2000 on HDFC Bank Credit Card EMI on 9 months tenure. Min Txn Value: ₹30000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "9"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250704203653BLDZA",
+                    "summary": "Flat ₹4000 on HDFC Bank Credit Card EMI on 12 months and above tenure. Min Txn Value: ₹50000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "12",
+                            "18",
+                            "24",
+                            "36"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "CASHBACK_ON_CARD",
+                    "adjustment_id": "FPO250619134128USHPF",
+                    "summary": "5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statement quarter",
+                    "contributors": {
+                        "payment_instrument": [
+                            "CREDIT"
+                        ],
+                        "banks": [
+                            "FLIPKARTAXISBANK"
+                        ],
+                        "emi_months": [
+                            "0"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO2507091534269T9NN",
+                    "summary": "BFL No Cost EMI Upto 12 Months",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "BAJAJFINSERV"
+                        ],
+                        "emi_months": [
+                            "9",
+                            "12"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://static-assets-web.flixcart.com/apex-static/images/payments/banks/BFL_V2.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250630202506KYC5F",
+                    "summary": "Extra ₹500 off on BOBCARD EMI Transactions on 9 months and above tenures. Min Product Value ₹25000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "BOBARODA"
+                        ],
+                        "emi_months": [
+                            "9",
+                            "12",
+                            "18",
+                            "24",
+                            "36"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://rukminim1.flixcart.com/www/96/96/promos/31/07/2024/fb560aa6-1104-492b-b747-f458dbae837b.png?q=100"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250704192447CLSFR",
+                    "summary": "Flat ₹750 on HDFC Bank Credit Card EMI on 6 months tenure. Min Txn Value: ₹15000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO2507042105097DZ77",
+                    "summary": "Flat ₹500 on HDFC Bank Credit Card EMI on 6 months tenure. Min. Txn Value: ₹10000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO2506301938399SY1F",
+                    "summary": "10% off up to ₹1,500 on BOBCARD EMI Transactions of 6 months and above tenures, Min TxnValue: ₹7,500",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "BOBARODA"
+                        ],
+                        "emi_months": [
+                            "6",
+                            "9",
+                            "12",
+                            "18",
+                            "24",
+                            "36"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://rukminim1.flixcart.com/www/96/96/promos/31/07/2024/fb560aa6-1104-492b-b747-f458dbae837b.png?q=100"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250704194638XUV22",
+                    "summary": "Flat ₹1000 on HDFC Bank Credit Card EMI on 9 months and above tenure. Min Txn Value: ₹15000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "9",
+                            "12",
+                            "18",
+                            "24",
+                            "36"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250705185902AISC5",
+                    "summary": "No Cost EMI Upto 6 Months",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "ICICI"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/icici-2c9f480b.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO2507042008157YQZM",
+                    "summary": "Flat ₹1750 on HDFC Bank Credit Card EMI on 6 months Tenure. Min Txn Value: ₹30000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO25070420315436CH6",
+                    "summary": "Flat ₹3500 on HDFC Bank Credit Card EMI on 9 months tenure. Min Txn Value: ₹50000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "9"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250705190347GHR57",
+                    "summary": "No Cost EMI Upto 6 Months",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "KOTAK"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/kotak-a0db9a54.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250704204930KZYV3",
+                    "summary": "Flat ₹4500 on HDFC Bank Credit Card EMI on 12 months and above tenure. Min Txn Value: ₹75000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "12",
+                            "18",
+                            "24",
+                            "36"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "CASHBACK_ON_CARD",
+                    "adjustment_id": "FPO250619135528ZQIZW",
+                    "summary": "5% cashback on Axis Bank Flipkart Debit Card up to ₹750",
+                    "contributors": {
+                        "payment_instrument": [
+                            "CREDIT"
+                        ],
+                        "banks": [
+                            "FLIPKARTAXISBANK"
+                        ],
+                        "emi_months": [
+                            "0"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/axis-78501b36.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO2507042000473JP81",
+                    "summary": "Flat ₹1500 on HDFC Bank Credit Card EMI on 9 months and above tenure. Min Txn Value: ₹20000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "9",
+                            "12",
+                            "18",
+                            "24",
+                            "36"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO2507042306179OKXZ",
+                    "summary": "Flat ₹1250 on HDFC Bank Credit Card EMI on 6 months tenure. Min Txn Value: ₹20000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250704202703TYGA8",
+                    "summary": "Flat ₹3250 on HDFC Bank Credit Card EMI on 6 months tenure. Min Txn Value: ₹50000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "6"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                },
+                {
+                    "adjustment_type": "INSTANT_DISCOUNT",
+                    "adjustment_id": "FPO250704210925MIFUZ",
+                    "summary": "Flat ₹750 on HDFC Bank Credit Card EMI on 9 months and above tenure. Min Txn Value: ₹10000",
+                    "contributors": {
+                        "payment_instrument": [
+                            "EMI_OPTIONS"
+                        ],
+                        "banks": [
+                            "HDFC"
+                        ],
+                        "emi_months": [
+                            "9",
+                            "12",
+                            "18",
+                            "24",
+                            "36"
+                        ],
+                        "card_networks": []
+                    },
+                    "display_tags": [
+                        "PAYMENT_OPTIONS"
+                    ],
+                    "image": "https://img1a.flixcart.com/www/linchpin/fk-cp-pay/hdfc-fa424ee4.svg"
+                }
+            ]
+        }
+    }
+}
+}
