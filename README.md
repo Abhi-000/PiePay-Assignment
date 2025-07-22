@@ -19,6 +19,8 @@ This service provides two core capabilities:
  - Admin UI: https://piepay-assignment-production.up.railway.app/admin
  - Database: PostgreSQL hosted on Railway
 
+🔍 *Note*: A basic frontend interface (`/admin`) was added using AI tools and deployed to simplify evaluation and improve usability. This UI is not part of the assignment scope but included for your convenience.
+
 ## ✨ Core Features
 
 - ✅ **Offer Ingestion:** Parses Flipkart’s raw offer JSON and stores structured entries in the database.
@@ -241,7 +243,37 @@ This will start the backend server on the specified port (default 3000).
 - API Base URL : `http://localhost:3000/api/offers`
 - Admin Dashboard : `http://localhost:3000/admin`
 
+## 🔧 Local Database Setup (Optional)
 
+If you prefer not to use the hosted Admin UI and want to run and inspect the PostgreSQL database locally, follow the steps below:
+
+1. Configure Local PostgreSQL Connection
+Update your .env file to point to your local PostgreSQL instance:
+
+```bash
+DATABASE_URL=postgresql://<username>:<password>@localhost:5432/<your_db_name>
+```
+
+2. Enable Schema Migration:
+To automatically create the required database schema (tables, indexes), uncomment the initDatabase() call inside app.js:
+```javascript
+   app.listen(PORT, () => {
+//   initDatabase(); // ← Uncomment this line
+     console.log(`Server is running on port ${PORT}`);
+   });
+```
+
+- You can also add a local PostgreSQL server to pgAdmin using the following details:
+  
+   ```bash
+   Host Name : yamanote.proxy.rlwy.net
+   Port : 51183
+   Maintainence Database : railway
+   Username : postgres
+   Password : wydDLiYQBHoAWBBRzYBSXahjyZfkDuEY
+   ```
+
+   
 ## 🧪 Testing
 
 The project includes comprehensive unit tests for core functionality:
