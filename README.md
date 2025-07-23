@@ -23,8 +23,8 @@ This service provides two core capabilities:
 
 ## ✨ Core Features
 
-- ✅ **Offer Ingestion:** Parses Flipkart’s raw offer JSON and stores structured entries in the database.
-- ✅ **Discount Calculation:** Calculates the highest applicable discount based on payment details (amount, bank, and payment instrument).
+- 📤 **Offer Ingestion:** Parses Flipkart’s raw offer JSON and stores structured entries in the database.
+- 🧮 **Discount Calculation:** Calculates the highest applicable discount based on payment details (amount, bank, and payment instrument).
 - 🧠 **De-duplication:** Prevents duplicate entries using Flipkart’s `adjustment_id` (a unique identifier in the response).
 - 📊 **Conditional Logic Parsing:** Extracts structured data from natural language summaries for precise discount evaluation.
 - 📦 **Consistent Responses:** API returns clean, structured outputs for easy integration into frontend apps or other systems.
@@ -247,6 +247,8 @@ This will start the backend server on the specified port (default 3000).
 
 If you prefer not to use the hosted Admin UI and want to run and inspect the PostgreSQL database locally, follow the steps below:
 
+### Option 1: Migrate the database to your local PostgreSQL instance
+
 1. Configure Local PostgreSQL Connection
 Update your .env file to point to your local PostgreSQL instance:
 
@@ -263,15 +265,17 @@ To automatically create the required database schema (tables, indexes), uncommen
    });
 ```
 
-- You can also add a local PostgreSQL server to pgAdmin using the following details:
+### Option 2: Connect to the hosted PostgreSQL database
+
+You can use the following hosted PostgreSQL database credentials to create a new server in pgAdmin and access the database directly.
   
-   ```bash
-   Host Name : yamanote.proxy.rlwy.net
-   Port : 51183
-   Maintainence Database : railway
-   Username : postgres
-   Password : wydDLiYQBHoAWBBRzYBSXahjyZfkDuEY
-   ```
+```bash
+Host Name : yamanote.proxy.rlwy.net
+Port : 51183
+Maintainence Database : railway
+Username : postgres
+Password : wydDLiYQBHoAWBBRzYBSXahjyZfkDuEY
+```
 
    
 ## 🧪 Testing
