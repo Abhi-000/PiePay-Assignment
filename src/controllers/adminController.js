@@ -13,7 +13,7 @@ const executeQuery = async (req, res) => {
     }
 
     // Basic security - prevent dangerous operations
-    const dangerousKeywords = ['DROP', 'DELETE', 'TRUNCATE', 'ALTER', 'UPDATE'];
+    const dangerousKeywords = ['DROP', 'DELETE', 'ALTER', 'UPDATE'];
     const upperQuery = query.toUpperCase();
     
     const isDangerous = dangerousKeywords.some(keyword => 
@@ -23,7 +23,7 @@ const executeQuery = async (req, res) => {
     if (isDangerous) {
       return res.status(403).json({
         success: false,
-        error: 'Only SELECT queries are allowed for security reasons'
+        error: 'Only SELECT queries are allowed for security reasons.'
       });
     }
 

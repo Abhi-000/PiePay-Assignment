@@ -68,7 +68,8 @@ const createOffers = async (req, res) => {
 
 const getHighestDiscount = async (req, res) => {
   try {
-    const { amountToPay, bankName, paymentInstrument } = req.query;
+    let { amountToPay, bankName, paymentInstrument } = req.query;
+    
     
     // Validation
     if (!amountToPay || !bankName) {
@@ -76,6 +77,7 @@ const getHighestDiscount = async (req, res) => {
         error: 'amountToPay and bankName are required query parameters' 
       });
     }
+    bankName = bankName.toUpperCase();
     
     const amount = parseFloat(amountToPay);
     if (isNaN(amount) || amount <= 0) {
