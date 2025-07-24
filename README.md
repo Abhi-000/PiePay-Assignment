@@ -212,7 +212,7 @@ Follow these steps to run the project locally:
 
 ```bash
 git clone https://github.com/Abhi-000/PiePay-Assignment.git
-cd piepay-backend
+cd PiePay-Assignment
 ```
 
 ### 2. Install Dependencies
